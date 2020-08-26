@@ -3,10 +3,16 @@
 {% block content %}
     <nav>Adoption Agency</nav>
     <h1>Pets</h1>
-    <div>
-        <img src="{{pet.url}}" alt="{{pet.name}}">
-        <p><span>{{pet.name}}</span><b>is available!</b></p>
-    </div>
+    {% for pet in pets %}
+  
+        <ul>
+            <li><img src="{{pet.url}}" alt="{{pet.name}}">
+                <p><span>{{pet.name}}</span><b>is available!</b></p></li>
+        </ul>
+        
+   
+    {% endfor %}
+
     <a href="/add">Add a Pet</a>
     
-{ % endblock %}
+{% endblock %}
