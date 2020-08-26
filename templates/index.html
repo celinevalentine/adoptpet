@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Page Not Found{% endblock %}
+{% block body %}
+    <nav>Adoption Agency</nav>
+    <h1>Pets</h1>
+    <div>
+        <img src="{{pet.url}}" alt="{{pet.name}}">
+        <p><span>{{pet.name}}</span><b>is available!</b></p>
+    </div>
+    <a href="/add">Add a Pet</a>
+    
+    { % endblock %}
