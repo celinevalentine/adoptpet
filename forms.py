@@ -3,9 +3,9 @@ from wtforms import StringField, FloatField, BooleanField, IntegerField, RadioFi
 from wtforms.validators import InputRequired, Optional
 
 class AddPetForm(FlaskForm):
-    
-    name = StringField("Pet name", validators=[InputRequired(message="Pet name can't be blank")])
-    species = StringField("Species",validators=[InputRequired(message="Species can't be blank")])
-    url = StringField("Photo URL", validators=[Optional()])
-    age = IntegerField("Age", validators=[Optional()])
-    notes = StringField("Notes", validators=[Optional()])
+
+    name = StringField("name", validators=[InputRequired(message="Pet name can't be blank")])
+    species = StringField("species",validators=[InputRequired(message="Species can't be blank")])
+    url = StringField("photo_url", validators=[Optional()])
+    age = IntegerField("age", validators=[Optional()])
+    notes = StringField("notes", validators=[Optional()])
