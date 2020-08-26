@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, BooleanField, IntegerField, RadioField, SelectField
-from wtform.validators import InputRequired, Email, Optional
+from wtforms.validators import InputRequired, Optional
 
 class AddPetForm(FlaskForm):
     name = StringField("Pet name", validators=[InputRequired(message="Pet name can't be blank")])
