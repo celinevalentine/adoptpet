@@ -1,18 +1,23 @@
 {% extends 'base.html' %}
 {% block title %}home{% endblock %}
 {% block content %}
-    <nav>Adoption Agency</nav>
+    
     <h1>Pets</h1>
-    {% for pet in pets %}
-  
-        <ul>
-            <li><img src="{{pet.url}}" alt="{{pet.name}}">
-                <p><span>{{pet.name}}</span><b>is available!</b></p></li>
-        </ul>
-        
-   
-    {% endfor %}
+    <div class="row">
 
-    <a href="/add" class="btn btn-success">Add Pet</a>
+    
+    {% for pet in pets %}
+        <div class="col-3">
+            <img src="{{pet.img_url()}}" class="img-thumbnail">
+            <a href="{{url_for('edit_pet', id=pet.id)}}">{{pet.name}}</a>
+            {% if pet.available %}
+                <b>is available!</b>{% endif %}
+        </div>
+            {% else %}
+            <div class="col-12">No pets yet.</div>
+    {% endfor %}
+    </div>      
+
+    <a href="{{url_for('add_pet')}}" class="btn btn-success">Add Pet</a>
     
 {% endblock %}
