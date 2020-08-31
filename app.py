@@ -28,10 +28,10 @@ def add_pet():
     if form.validate_on_submit():
         name = form.name.data
         species = form.species.data
-        url = form.url.data
+        photo_url = form.photo_url.data
         age = form.age.data
         notes = form.notes.data
-        pet = Pet(name=name, species=species, photo_url=url, age=age, notes=notes)
+        pet = Pet(name=name, species=species, photo_url=photo_url, age=age, notes=notes)
         db.session.add(pet)
         db.session.commit()
         flash(f"{pet.name} is added.")
@@ -47,7 +47,7 @@ def edit_pet(id):
 
     if form.validate_on_submit():
         pet.notes = form.notes.data
-        pet.photo_url = form.url.data
+        pet.photo_url = form.photo_url.data
         pet.available = form.available.data
         db.session.commit()
         flash(f"{pet.name} is updated.")
